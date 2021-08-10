@@ -15,7 +15,7 @@ import MapKit
 final class QuickLookTests: XCTestCase {
     var waypoint: Waypoint!
     var linearRing: LinearRing!
-    var polygon: GEOSwift.Polygon!
+    var polygon: GEOSwift.GEOSwift_Polygon!
     var geometryCollection: GeometryCollection<Geometry>!
     let imageSize = CGSize(width: 400, height: 400)
     var context: CGContext!
@@ -28,7 +28,7 @@ final class QuickLookTests: XCTestCase {
                                          Coordinate(x: -1, y: -1),
                                          Coordinate(x: -1, y: 1),
                                          Coordinate(x: 1, y: 1)])
-        polygon = Polygon(shell: linearRing, holes: [])
+        polygon = GEOSwift_Polygon(shell: linearRing, holes: [])
         geometryCollection = GeometryCollection(geometries: [linearRing, waypoint])
 
         UIGraphicsBeginImageContextWithOptions(imageSize, false, 1)

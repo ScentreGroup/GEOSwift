@@ -20,9 +20,9 @@ public extension Geometry {
     }
 
     /// - returns: The smallest Polygon that contains all the points in the geometry.
-    func convexHull() -> Polygon? {
+    func convexHull() -> GEOSwift_Polygon? {
         guard let convexHullGEOM = GEOSConvexHull_r(GEOS_HANDLE, storage.GEOSGeom) else { return nil }
-        return Geometry.create(storage: GeometryStorage(GEOSGeom: convexHullGEOM, parent: nil)) as? Polygon
+        return Geometry.create(storage: GeometryStorage(GEOSGeom: convexHullGEOM, parent: nil)) as? GEOSwift_Polygon
     }
 
     /// - returns: a Geometry representing the points shared by this geometry and other.
