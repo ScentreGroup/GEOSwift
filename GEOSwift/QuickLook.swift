@@ -110,7 +110,7 @@ extension LineString: GEOSwiftQuickLook {
     }
 }
 
-extension Polygon: GEOSwiftQuickLook {
+extension GEOSwift_Polygon: GEOSwiftQuickLook {
     func draw(in context: CGContext, imageSize: CGSize, mapRect: MKMapRect) {
         if let overlay = mapShape() as? MKOverlay {
             let renderer = MKPolygonRenderer(overlay: overlay)
